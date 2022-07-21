@@ -5,10 +5,14 @@ import io.dropwizard.hibernate.AbstractDAO;
 
 import org.hibernate.SessionFactory;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 import java.util.Optional;
 
 public class PersonDAO extends AbstractDAO<Person> {
+    @Inject
+    @Named("HibernateBundle")
     public PersonDAO(SessionFactory factory) {
         super(factory);
     }
